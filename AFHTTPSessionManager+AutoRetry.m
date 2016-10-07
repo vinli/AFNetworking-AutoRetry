@@ -125,7 +125,7 @@ SYNTHESIZE_ASC_OBJ(__retryDelayCalcBlock, setRetryDelayCalcBlock);
         }
         
         // reached the maximum retry count
-        NSMutableDictionary *retryOperationDict = self.tasksDict[taskcreatorCopy];
+        NSMutableDictionary *retryOperationDict = self.tasksDict[task];
         int originalRetryCount = [retryOperationDict[@"originalRetryCount"] intValue];
         int retriesRemainingCount = [retryOperationDict[@"retriesRemainingCount"] intValue];
         if (!retriesRemainingCount) {
