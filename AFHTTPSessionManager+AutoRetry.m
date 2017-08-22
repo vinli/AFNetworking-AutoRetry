@@ -4,7 +4,7 @@
 
 #import "AFHTTPRequestOperationManager+AutoRetry.h"
 #import "AFHTTPSessionManager+AutoRetry.h"
-#import "ObjcAssociatedObjectHelpers.h"
+#import <ObjcAssociatedObjectHelpers/ObjcAssociatedObjectHelpers.h>
 
 
 #pragma clang diagnostic push

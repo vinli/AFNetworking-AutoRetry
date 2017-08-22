@@ -2,7 +2,7 @@
 // Created by Shai Ohev Zion on 1/21/14.
 
 #import "AFHTTPRequestOperationManager+AutoRetry.h"
-#import "ObjcAssociatedObjectHelpers.h"
+#import <ObjcAssociatedObjectHelpers/ObjcAssociatedObjectHelpers.h>
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCUnusedMethodInspection"
