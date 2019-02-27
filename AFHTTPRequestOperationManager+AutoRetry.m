@@ -125,9 +125,8 @@ SYNTHESIZE_ASC_OBJ(__retryDelayCalcBlock, setRetryDelayCalcBlock);
             failure(operation, error);
             ARLog(@"AutoRetry: done.");
             return;
-        }
-        
-        // Retry request
+        } else {    
+            // Retry request
             ARLog(@"AutoRetry: Request failed: %@, retry %d out of %d begining...",
                     error.localizedDescription, originalRetryCount - retriesRemainingCount + 1, originalRetryCount);
         
@@ -152,6 +151,7 @@ SYNTHESIZE_ASC_OBJ(__retryDelayCalcBlock, setRetryDelayCalcBlock);
             } else {
                 addRetryOperation();
             }
+        }
     };
     NSMutableDictionary *operationDict = self.operationsDict[request];
     if (!operationDict) {
