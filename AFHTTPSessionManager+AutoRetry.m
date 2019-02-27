@@ -133,9 +133,8 @@ SYNTHESIZE_ASC_OBJ(__retryDelayCalcBlock, setRetryDelayCalcBlock);
             ARLog(@"AutoRetry: No more retries allowed! executing supplied failure block...");
             failure(task, error);
             ARLog(@"AutoRetry: done.");
-        }
-        
-        // Retry the request
+        } else {
+            // Retry the request
             ARLog(@"AutoRetry: Request failed: %@, retry %d out of %d begining...",
                 error.localizedDescription, originalRetryCount - retriesRemainingCount + 1, originalRetryCount);
             void (^addRetryOperation)() = ^{
@@ -153,6 +152,7 @@ SYNTHESIZE_ASC_OBJ(__retryDelayCalcBlock, setRetryDelayCalcBlock);
             } else {
                 addRetryOperation();
             }
+        }
     };
     NSURLSessionDataTask *task = taskCreator(retryBlock);
     NSMutableDictionary *taskDict = self.tasksDict[taskcreatorCopy];
